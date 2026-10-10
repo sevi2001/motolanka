@@ -174,25 +174,24 @@ class BikePhoto extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 240,
+    return Container(
+      height: 260,
       width: double.infinity,
+      color: const Color(0xFFE2E2E4),
+      padding: const EdgeInsets.all(12),
       child: Image.asset(
         path,
-        fit: BoxFit.cover,
+        fit: BoxFit.contain,
         alignment: Alignment.center,
         errorBuilder: (context, error, stackTrace) {
-          return const ColoredBox(
-            color: Color(0xFFF0F1F4),
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.two_wheeler, size: 64, color: Color(0xFFE50920)),
-                  SizedBox(height: 12),
-                  Text('Bike photo unavailable'),
-                ],
-              ),
+          return const Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.two_wheeler, size: 64, color: Color(0xFFE50920)),
+                SizedBox(height: 12),
+                Text('Bike photo unavailable'),
+              ],
             ),
           );
         },
